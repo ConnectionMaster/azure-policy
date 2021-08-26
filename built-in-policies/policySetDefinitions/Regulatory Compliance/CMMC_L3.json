@@ -4,7 +4,7 @@
     "policyType": "BuiltIn",
     "description": "This initiative includes policies that address a subset of Cybersecurity Maturity Model Certification (CMMC) Level 3 requirements. Additional policies will be added in upcoming releases. For more information, visit https://aka.ms/cmmc-initiative.",
     "metadata": {
-      "version": "3.0.0-preview",
+      "version": "3.2.1-preview",
       "preview": true,
       "category": "Regulatory Compliance"
     },
@@ -605,7 +605,7 @@
           "Disabled"
         ],
         "metadata": {
-          "displayName": "Effect for policy: Disk encryption should be applied on virtual machines",
+          "displayName": "Effect for policy: Virtual machines should encrypt temp disks, caches, and data flows between Compute and Storage resources",
           "description": "For more information about effects, visit https://aka.ms/policyeffects"
         }
       },
@@ -1398,13 +1398,12 @@
       },
       "listOfLocations-b6e2945c-0b7b-40f5-9233-7a5323b5cdc6": {
         "type": "Array",
-        "defaultValue": [
-          "[]"
-        ],
+        "defaultValue": [],
         "metadata": {
           "displayName": "List of regions where Network Watcher should be enabled",
           "description": "Audit if Network Watcher is not enabled for region(s).",
-          "strongType": "location"
+          "strongType": "location",
+          "deprecated": true
         }
       },
       "resourceGroupName-b6e2945c-0b7b-40f5-9233-7a5323b5cdc6": {
@@ -2965,7 +2964,7 @@
       },
       "effect-2bdd0062-9d75-436e-89df-487dd8e4b3c7": {
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Disabled",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -2973,7 +2972,8 @@
         ],
         "metadata": {
           "displayName": "Effect for policy: Cognitive Services accounts should enable data encryption",
-          "description": "For more information about effects, visit https://aka.ms/policyeffects"
+          "description": "For more information about effects, visit https://aka.ms/policyeffects",
+          "deprecated": true
         }
       },
       "effect-3a58212a-c829-4f13-9872-6371df2fd0b4": {
@@ -3303,7 +3303,7 @@
           "Disabled"
         ],
         "metadata": {
-          "displayName": "Effect for policy: Linux machines should meet requirements for the Azure security baseline",
+          "displayName": "Effect for policy: Linux machines should meet requirements for the Azure compute security baseline",
           "description": "For more information about effects, visit https://aka.ms/policyeffects"
         }
       },
@@ -4222,9 +4222,6 @@
         "policyDefinitionReferenceId": "b6e2945c-0b7b-40f5-9233-7a5323b5cdc6",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b6e2945c-0b7b-40f5-9233-7a5323b5cdc6",
         "parameters": {
-          "listOfLocations": {
-            "value": "[parameters('listOfLocations-b6e2945c-0b7b-40f5-9233-7a5323b5cdc6')]"
-          },
           "resourceGroupName": {
             "value": "[parameters('resourceGroupName-b6e2945c-0b7b-40f5-9233-7a5323b5cdc6')]"
           }
@@ -5841,19 +5838,6 @@
         "parameters": {
           "effect": {
             "value": "[parameters('effect-24fba194-95d6-48c0-aea7-f65bf859c598')]"
-          }
-        },
-        "groupNames": [
-          "CMMC_L3_SC.3.177",
-          "CMMC_L3_SC.3.191"
-        ]
-      },
-      {
-        "policyDefinitionReferenceId": "2bdd0062-9d75-436e-89df-487dd8e4b3c7",
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2bdd0062-9d75-436e-89df-487dd8e4b3c7",
-        "parameters": {
-          "effect": {
-            "value": "[parameters('effect-2bdd0062-9d75-436e-89df-487dd8e4b3c7')]"
           }
         },
         "groupNames": [
